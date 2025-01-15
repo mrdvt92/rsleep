@@ -14,4 +14,6 @@
 
 ### Usage in Crontab
 
+```
 rsleep 60; echo "do something in the middle of the minute"
+```

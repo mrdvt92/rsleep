@@ -4,23 +4,23 @@ rsleep - an executable which provides random sleep for scripts
 
 =head1 SYNOPSIS
 
-rsleep [-d] [NUMBER]
-rsleep -v
-rsleep -h
+  rsleep [-d] [NUMBER]
+  rsleep -v
+  rsleep -h
 
 =head1 DESCRIPTION
 
 Pause for a random period between 0 and NUMBER seconds.
 
-[NUMBER] 
--d   debug
--v   displays version
--h   displays help
+  [NUMBER] 
+  -d   debug
+  -v   displays version
+  -h   displays help
 
 =head1 EXAMPLES
 
-rsleep    ; echo "do something a bit later"
-rsleep 60 ; echo "do something from crontab randomly in the minute"
+  rsleep    ; echo "do something a bit later"
+  rsleep 60 ; echo "do something from crontab randomly in the minute"
 
 =head1 AUTHOR
 

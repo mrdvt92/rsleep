@@ -2,7 +2,7 @@ NAME	= rsleep
 SPEC	= $(NAME).spec
 VERSION	= $(shell sed -e '/Version:/!d' -e 's/[^0-9.]*\([0-9.]*\).*/\1/' $(SPEC))
 SRCS	= rsleep.c rsleep.pod
-AUX	= $(SPEC) Makefile
+AUX	= $(SPEC) Makefile LICENSE
 DISTDIR	= $(NAME)-$(VERSION)
 
 all:	rsleep rsleep.1.gz
@@ -16,7 +16,7 @@ rsleep.1:	rsleep.pod
 rsleep.1.gz:	rsleep.1
 	gzip -c rsleep.1 > rsleep.1.gz
 
-test:
+test: rsleep
 	echo 3.3333
 	/usr/bin/time --format="%e" ./rsleep -d 3.3333
 	echo 0
@@ -49,3 +49,6 @@ $(DISTDIR).tar.gz:	dist
 
 rpm:    $(DISTDIR).tar.gz
 	rpmbuild -ta $(DISTDIR).tar.gz
+
+clean:
+	rm -f rsleep rsleep.1 rsleep.1.gz
